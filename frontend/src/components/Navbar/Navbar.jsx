@@ -3,11 +3,8 @@ import { assets } from "../../assets/assets"
 import "./Navbar.css"
 
 const Navbar=()=>{
-
     const [menu, setMenu] = useState("home")
-
     return (
-
     <>
     <div className="navbar">
         <img src={assets.shettyslogo} alt="shettys-kitchen-logo" className="logo" />
@@ -31,5 +28,4 @@ const Navbar=()=>{
     </>
 )
 }
-
 export default Navbar

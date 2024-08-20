@@ -1,0 +1,46 @@
+.header{
+    height: 60vh;
+    margin: 30px auto;
+    background: url('/header1.png') no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 30px;
+}
+
+.header-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 70%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2{
+    font-weight: 600;
+    color: #fff;
+    font-size: max(4.5vw, 22px);
+}
+.header-contents p{
+    color: #fff;
+    font-size: 1.5vw;
+}
+.header-contents button{
+    padding: 1vw 2.3vw;
+    border: none;
+    border-radius: 5px;
+    color: #5c9009;
+    background: #fff;
+    font-size: max(1vw, 13px);
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+    
+}
+.header-contents button:hover{
+    background: #5c9009;
+    color: #fff;
+}
