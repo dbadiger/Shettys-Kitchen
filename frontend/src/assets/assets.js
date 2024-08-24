@@ -25,6 +25,9 @@ import rating from "./rating.png"
 import add from "./add.png"
 import add_green from "./add_green.png"
 import remove_red from "./remove_red.png"
+import facebook_icon from "./facebook_icon.png"
+import instagram_icon from "./instagram_icon.png"
+import google_maps_icon from "./google_maps_icon.png"
 
 
 export const assets = {
@@ -35,7 +38,10 @@ export const assets = {
 	rating,
 	add,
 	add_green,
-	remove_red
+	remove_red,
+	facebook_icon,
+	instagram_icon,
+	google_maps_icon
 }
 
 
