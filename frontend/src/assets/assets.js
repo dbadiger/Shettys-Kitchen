@@ -28,7 +28,8 @@ import remove_red from "./remove_red.png"
 import facebook_icon from "./facebook_icon.png"
 import instagram_icon from "./instagram_icon.png"
 import google_maps_icon from "./google_maps_icon.png"
-
+import playstore from "./playstore.png"
+import appstore from "./appstore.png"
 
 export const assets = {
     shettyslogo,
@@ -41,7 +42,9 @@ export const assets = {
 	remove_red,
 	facebook_icon,
 	instagram_icon,
-	google_maps_icon
+	google_maps_icon,
+	playstore,
+	appstore
 }
 
 
