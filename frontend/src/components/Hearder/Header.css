@@ -44,3 +44,24 @@
     background: #5c9009;
     color: #fff;
 }
+
+@media (max-width:1050px) {
+    .header{
+        height: 50vw;
+    }
+    .header-contents{
+        max-width: 80%;
+    }  
+}
+@media (max-width:750px) {
+    .header-contents{
+        max-width: 80%;
+    }  
+    .header-contents p{
+        display:none;
+    }
+
+    .header-contents button{
+        padding: 2vw 4vw
+    }
+}

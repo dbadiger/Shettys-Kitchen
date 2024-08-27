@@ -21,9 +21,11 @@
     overflow-x:scroll; 
 }
 
-/* .explore-menu-list::-webkit-scrollbar{
-    display: none;
-} */
+
+.explore-menu-list{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
 
 
 .explore-menu-list-item img{
@@ -60,4 +62,24 @@ cursor:pointer;
    100%{
        transform: rotate(360deg);
       }
+   }
+
+
+   @media(max-width:1050px){
+    .explore-menu-text{
+        max-width:100%;
+        font-size: 14px;
+
+    }
+    
+   }
+
+   @media(max-width:750px){
+    .explore-menu-text{
+        max-width:100%;
+        font-size: 14px;
+    }
+    .explore-menu-list-item img{
+        min-width: 150px;
+    }
    }
