@@ -58,10 +58,10 @@
     position: absolute;
     min-width: 10px;
     min-height: 10px;
-    background-color: rgb(2, 207, 13); 
+    background-color: #02e20d; 
     border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    top: -3px;
+    right: -3px;
 }
 
 @media (max-width:1050px) {

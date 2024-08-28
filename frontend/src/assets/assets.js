@@ -30,6 +30,7 @@ import instagram_icon from "./instagram_icon.png"
 import google_maps_icon from "./google_maps_icon.png"
 import playstore from "./playstore.png"
 import appstore from "./appstore.png"
+import cross from "./cross.png"
 
 export const assets = {
     shettyslogo,
@@ -44,7 +45,8 @@ export const assets = {
 	instagram_icon,
 	google_maps_icon,
 	playstore,
-	appstore
+	appstore, 
+	cross
 }
 
 
