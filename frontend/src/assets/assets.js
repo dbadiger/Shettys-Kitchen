@@ -31,7 +31,9 @@ import google_maps_icon from "./google_maps_icon.png"
 import playstore from "./playstore.png"
 import appstore from "./appstore.png"
 import cross from "./cross.png"
-
+import profile_icon from "./boy.png"
+import bag from "./bag.png"
+import logout from "./logout.png"
 export const assets = {
     shettyslogo,
     basket,
@@ -46,7 +48,10 @@ export const assets = {
 	google_maps_icon,
 	playstore,
 	appstore, 
-	cross
+	cross,
+	profile_icon, 
+	bag,
+	logout
 }
 
 

@@ -1,19 +1,39 @@
-import express from "express"
-import cros from "cros"
+import express from 'express';
+import cors from "cors"
+import { connectDB } from './config/db.js';
+import foodRouter from './routes/foodRoute.js';
 
+import "dotenv/config"
+import userRouter from './routes/userRoute.js';
 
-//App Config
+//app config
 const app = express();
-const port = 4000;
+const port = 4000
+
 
 //middleware
 app.use(express.json())
-app.use(cros())
+app.use(cors())
 
-app.get("/", (req, res)=>{
-    res.send("API Working")
-})
+//db connection
+connectDB();
 
-app.listen(port, ()=>{
-    console.log(`Server started on htttp://localhost:${port}`)
-})
+
+//API Endpoint
+app.use("/api/food", foodRouter)
+app.use("/images", express.static('uploads'))
+app.use("/api/user", userRouter)
+
+
+
+app.get('/', (request, response)=>{
+    
+ response.send("Hello, This is Home Page"); 
+});
+
+app.listen(port,()=>{
+    console.log(`Server started on ${port}`)
+});
+
+
+//mongodb+srv://testbe121:Testbe121@cluster0.3fxys.mongodb.net/?
