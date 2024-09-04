@@ -9,7 +9,7 @@ const FoodItem = ({name, id, price, image, description})=>{
 //    const [itemCount, setItemCount] = useState(0)
 
 //With Context API
-    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext)
+    const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext)
     return (
         //without context api
     /*<div className="food-item">
@@ -40,7 +40,7 @@ const FoodItem = ({name, id, price, image, description})=>{
     </div>*/
     <div className="food-item">
         <div className="food-item-container">
-            <img src={image} alt="" className="food-item-image"/>
+            <img src={url+"/images/"+image} alt="" className="food-item-image"/>
             {
                 !cartItems[id] ? 
                 <img src={assets.add} alt="" className="add"
