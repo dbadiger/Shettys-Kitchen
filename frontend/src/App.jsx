@@ -6,6 +6,9 @@ import Footer from "./components/Footer/Footer"
 import LoginPopup from "./components/LoginPopup/LoginPopup"
 import Cart from "./Pages/Cart/Cart"
 import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder"
+import Verify from "./Pages/PlaceOrder/Verify/Verify"
+import MyOrders from "./Pages/MyOrders/MyOrders"
+
 
  
 function App() {
@@ -23,6 +26,9 @@ function App() {
         <Route path = "/" element={<Home/>} />
         <Route path = "/cart" element={<Cart/>} />
         <Route path = "/order" element={<PlaceOrder/>} />
+        <Route path = "/verify" element={<Verify/>} />
+        <Route path="/myorders" element={<MyOrders/>}/>
+      
       </Routes>
       
 

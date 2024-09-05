@@ -1,0 +1,51 @@
+import React, { useContext, useEffect, useState } from 'react'
+import "./Verify.css"
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { StoreContext } from '../../../context/StoreContext';
+import axios from 'axios';
+
+
+const Verify = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const success = searchParams.get("success")
+    const orderId = searchParams.get("orderId")
+
+    console.log(success, orderId);
+    const {url} = useContext(StoreContext)
+    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
+
+    const verifyPayment =async ()=>{
+        const response = await axios.post(url+"/api/order/verify", {success, orderId},{
+            headers: {
+              token: token // Include the token in the request headers
+            }
+          });
+        console.log(response.data)
+        if(response.data.success){
+            navigate("/myorders");
+        }
+        else{
+            navigate("/")
+        }
+        
+    }
+
+    useEffect(()=>{
+        verifyPayment();
+
+    },[])
+
+
+    return (
+    <div className='verify'>
+        <div className="spinner">
+
+        </div>
+        
+      
+    </div>
+  )
+}
+
+export default Verify

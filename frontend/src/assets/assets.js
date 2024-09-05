@@ -34,6 +34,8 @@ import cross from "./cross.png"
 import profile_icon from "./boy.png"
 import bag from "./bag.png"
 import logout from "./logout.png"
+import parcel from "./parcel.png"
+
 export const assets = {
     shettyslogo,
     basket,
@@ -51,7 +53,7 @@ export const assets = {
 	cross,
 	profile_icon, 
 	bag,
-	logout
+	logout,parcel
 }
 
 

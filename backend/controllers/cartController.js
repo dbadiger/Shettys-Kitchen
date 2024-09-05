@@ -5,11 +5,11 @@ import userModel from "../models/userModel.js"
 const addToCart = async(req, res)=>{
     try {
         let userData = await userModel.findOne({_id:req.body.userId})
-        console.log(userData)
+        // console.log(userData)
         // let cartData = await userData.cartData;
        
         const cart = userData.cart;
-        console.log(cart)
+        // console.log(cart)
 
         if(!cart[req.body.itemId]){
             cart[req.body.itemId]=1;
@@ -17,7 +17,7 @@ const addToCart = async(req, res)=>{
         else{
             cart[req.body.itemId]+=1;
         }
-        console.log(cart)
+        // console.log(cart)
         await userData.save(); 
         await userModel.findByIdAndUpdate(req.body.userId,{cart});
         res.json({success:true,message:"Added to Cart"})
@@ -34,11 +34,11 @@ const reomveFromCart = async(req, res)=>{
         console.log(userData)
         // let cartData = await userData.cartData;
         let cart = userData.cart;
-        console.log(cart)
+        // console.log(cart)
         if(cart[req.body.itemId]>0){
             cart[req.body.itemId] -=1; 
         }
-        console.log(cart)
+        // console.log(cart)
         await userData.save();
         await userModel.findByIdAndUpdate(req.body.userId,{cart});
         res.json({success:true, message:"Removed from Cart"})
