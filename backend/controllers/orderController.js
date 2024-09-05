@@ -9,7 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 const placeOrder = async (req, res) => {
 
-    const frontend_url = "https://animated-eureka-v6vpjjprrv972w6wv-5173.app.github.dev"
+    const frontend_url = "https://animated-eureka-v6vpjjprrv972w6wv-5174.app.github.dev"
 
     try {
         const newOrder = new orderModel({
@@ -75,16 +75,7 @@ const verifyOrder = async (req, res) => {
             await orderModel.findByIdAndDelete(orderId)
             res.json({ success: false, message: "Not Paid" })
           }
-        // if (success == "true") {
-        //     await order.updateOne({ payment: true })
-        //     // await orderModel.findByIdAndUpdate(orderId, { payment: true })
-        //     orderModel.save();
-        //     res.json({ success: true, message: "Paid" })        
-        // }
-        // else {
-        //     await orderModel.findByIdAndDelete(orderId)
-        //     res.json({ success: false, message: "Not Paid" })
-        // }
+      
 
     } catch (error) {
         console.log(error);
@@ -105,10 +96,37 @@ const userOrders =async (req, res)=>{
     }
 }
 
+//All Users Orders to Admin panel
+const listOrders = async(req, res)=>{
+    try {
+        const orders = await orderModel.find({})
+        res.json({success:true, data:orders})
+
+    } catch (error) {
+        console.log(error);
+        res.json({success:false, message:"Error"})
+        
+    }
+}
+
+
+
+//API for Updating Order Status
+
+const updateStatus = async (req, res) => {
+    try {
+      const orderid = { _id: req.body.orderId };
+      const status = { status: req.body.status };
+      await orderModel.findOneAndUpdate(orderid, status, { new: true });
+      res.json({ success: true, message: "Status Updated" });
+    } catch (error) {
+      console.log(error);
+      res.json({ success: false, message: "Error" });
+    }
+  };
 
 
 
 
 
-
-export { placeOrder, verifyOrder,userOrders }
+export { placeOrder, verifyOrder,userOrders, listOrders, updateStatus }
