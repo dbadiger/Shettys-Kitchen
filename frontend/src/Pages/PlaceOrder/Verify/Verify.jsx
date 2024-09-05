@@ -17,7 +17,7 @@ const Verify = () => {
 
 
     //Method 1
-    /*
+    
     const verifyPayment =async ()=>{
         const response = await axios.post(url+"/api/order/verify", {success, orderId},{
             headers: {
@@ -33,7 +33,7 @@ const Verify = () => {
         }
         
     }
-    */
+    
 
     //Method 2
     /*const verifyPayment = async ()=>{
@@ -47,7 +47,7 @@ const Verify = () => {
 */
 
     //method 3
-    const verifyPayment = async () => {
+ /*   const verifyPayment = async () => {
   console.log(`URL: ${url}`);
   const response = await axios.post(`${url}/api/order/verify`, { success, orderId }, {
     headers: {
@@ -60,7 +60,7 @@ const Verify = () => {
   } else {
     navigate("/");
   }
-};
+};*/
 
     
     useEffect(()=>{
