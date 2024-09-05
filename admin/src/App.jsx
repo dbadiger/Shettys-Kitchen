@@ -10,7 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
- const url = "https://animated-eureka-v6vpjjprrv972w6wv-4000.app.github.dev"
+ // const url = "https://animated-eureka-v6vpjjprrv972w6wv-4000.app.github.dev"
+ const url = "https://shettys-kitchen-backen.onrender.com"
   return (
     <>
     <ToastContainer/>
