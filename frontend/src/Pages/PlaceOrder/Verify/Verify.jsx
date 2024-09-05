@@ -15,20 +15,28 @@ const Verify = () => {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
 
-    const verifyPayment =async ()=>{
-        const response = await axios.post(url+"/api/order/verify", {success, orderId},{
-            headers: {
-              token: token // Include the token in the request headers
-            }
-          });
-        console.log(response.data)
+    // const verifyPayment =async ()=>{
+    //     const response = await axios.post(url+"/api/order/verify", {success, orderId},{
+    //         headers: {
+    //           token: token // Include the token in the request headers
+    //         }
+    //       });
+    //     console.log(response.data)
+    //     if(response.data.success){
+    //         navigate("/myorders");
+    //     }
+    //     else{
+    //         navigate("/")
+    //     }
+        
+    // }
+    const verifyPayment = async ()=>{
+        const response = await axios.post(url+"/api/order/verify",{success, orderId})
         if(response.data.success){
             navigate("/myorders");
+        }else{
+            navigate("/");
         }
-        else{
-            navigate("/")
-        }
-        
     }
 
     useEffect(()=>{
